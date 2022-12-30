@@ -1,0 +1,71 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Brushed',sans-serif;
+}
+
+
+.containerHeader{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150px;
+    background-color:lightgrey;
+
+}
+.logo{
+    height: 230px;
+    width: 150px;
+}
+.logo img{
+    height: 216px;
+    width: 120px;
+    object-fit: cover;
+    margin-left: 32px;
+}
+
+.nameArtist h1{
+    font-size: 5rem;
+    margin-bottom: 72px;
+    color: #650900;
+}
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 20px;
+    width: 20px;
+    border: 1px #650900 solid;
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 70px;
+    margin-right: 32px;
+}
+.hamburger:hover {
+    cursor:grab;
+}
+.burger{
+    height: 4px;
+    width: 30px;
+    background-color: #650900;
+}
+nav{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 30px;
+    top: 180px;   
+}
+nav .item_menu {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #650900;
+}
