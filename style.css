@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+	font-family: "Brushed";
+	src: url('/font/Brushed.ttf');
+}
 body {
     font-family: 'Brushed',sans-serif;
 }
@@ -140,6 +144,16 @@ section h2 {
 .avis h2 {
     width: max-content;
 }
+.affichageAvis {
+   
+    overflow: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding-top: 2rem;
+    
+    max-height: 45vh;
+    max-width: 20vw ;
+}
 #dernierePeinture {
     height: auto;
     margin-top: 3%;
@@ -172,20 +186,93 @@ section h2 {
     display: flex;
     justify-content: center;
     margin: 2% 0 2% 0;
+    border-bottom: 3px solid #650900;
+    padding-bottom: 2%;
 }
 .donnerAvis {
+    width: 46vw;
     border: 2px solid #650900;
     border-radius: 8px;
     padding: 0 50px 0 50px;
     background-color:#ceeff4 ;
 }
-
+.avisPrenom {
+    display: flex;
+    flex-direction: column;
+}
+.avisAvis {
+    display: flex;
+    flex-direction: column;
+}
+.labelPrenom {
+    margin: 10px 0 10px 0;
+    color: #650900;
+}
+#prenom {
+    padding: 5px 5px;
+    font-size: 16px;
+}
+.labelAvis {
+    margin: 10px 0 10px 0;
+    color: #650900;
+}
+#avis {
+    padding: 5px;
+    font-size: 16px;
+}
+.buttonAvis {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px 0 10px 0;
+}
+.btnAvis {
+    color:white;
+    background-color: #650900;
+    font-weight: bold;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px gray;
+}
+.btnAvis:active {
+    transform: translateY(2px);
+}
 
 /*------------------------------------ section portrait -----------------------------*/
+.containerPortrait {
+    display: flex;
+    flex-direction: column;
+    width: 42vw;
+    margin: auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-bottom: 3%;
 
+}
+.paraPortrait {
+    text-align: justify;
+    margin-top: 3rem;
+}
 
+/*----------------------------------- footer -----------------------------------------*/
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+    position: relative;
+    bottom: 0;
+    background-color: #ceeff4;
+}
+.reseau {
+    width: 10%;
+    height: 50%;
+    margin-left: 5%;
+    color: #650900;
 
-
+}
 
 /*---------------------------------- @media -----------------------------------------*/
 @media (max-width: 1150px){
@@ -228,4 +315,82 @@ section h2 {
         top: 50px;
         right: 10px;
     }
+    .containerPortrait {
+        margin: 0 10px;
+        width: 95%;
+    } 
 }
+/*------------------------------ galerie carousel --------------------*/
+.wrapper {
+    display: grid;
+    
+    
+    grid-template-columns: repeat(3, 100%);
+    grid-template-rows: 300px;
+    
+    
+    
+    scroll-behavior: smooth;
+
+
+}
+
+.wrapper section {
+    
+  
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    margin: 20px 0;
+}
+
+.wrapper section .item {
+    display: flex;
+    justify-content: center;
+    padding: 0 2px;
+    transition: 250ms all;
+}
+.item img {
+    object-fit:scale-down ;
+    height: 300px;
+    max-width: 100%;
+}
+
+
+.wrapper section a {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 6em;
+    background: black;
+    width: 80px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.wrapper section a:nth-of-type(1) {
+
+    bottom: 50px;
+    left: 0;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, #650900 100%);
+}
+
+.wrapper section a:nth-of-type(2) {
+
+    bottom: 50px;
+    right: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #650900 100%);
+}
+
+@media only screen and (max-width: 600px) {
+    a.arrow__btn {
+        display: none;
+    }}
+
+/*----------------------- presentation tableau ------------------------------------*/
+.presentation {
+    width: 100vw;
+    height: 70vh;
+    background-color: #fdfcfc;
+}    
