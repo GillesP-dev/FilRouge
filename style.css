@@ -394,3 +394,43 @@ section h2 {
     height: 70vh;
     background-color: #fdfcfc;
 }    
+/* ---------------------- formulaire ----------------------------------------------*/
+
+.formulaire {
+    justify-content: center;
+    height: 92vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.form-contact {
+    color: #650900;
+    
+}
+fieldset {
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    width: 40rem;
+    border-radius: 20px;
+    background-color: #ceeff4;
+}
+legend {
+    margin-left: 4rem;
+    font-size: 2rem;
+}
+.input {
+    height: 20px;
+}
+.marge {
+    margin-right:4rem;
+    margin-left: 4rem;
+}
+.label {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+.name {
+    margin-top: 5.5rem;
+}

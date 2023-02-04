@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <div class="logo">
+                <img src="/lartiste-5.png" alt="logo">
+            </div>
+            <div class="nameArtist">
+                <h1>PATRICK SOULIERS</h1>
+                <P>le peintre passionné</P>
+            </div>
+            <div class="hamburger">
+                <div class="burger"></div>
+                <div class="burger"></div>
+                <div class="burger"></div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html" class="item_menu accueil">Accueil</a></li>
+                    <li><a href="/galerie.html" class="item_menu galeries">Galeries</a></li>
+                    <li><a href="/contact.html" class="item_menu contact">contact</a></li>
+                    <div class="slider slider1"></div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ <div class="formulaire">   
+<form  class="form-contact" action="contact.php" method="post">
+    <fieldset>
+        <legend>Contactez-moi</legend>
+    <label for="name" class="marge name label">nom</label>
+    <input type="text" name="cf_name" id="name" class="marge input">
+    <label for="prenomForm" class="marge label">premon</label>
+    <input type="text" name="cf_prenom" id="prenomForm" class="marge input">
+    <label for="mail" class="marge label">votre e-mail</label>
+    <input type="text" name="cf_email" id="mail" class="marge input">
+    <label for="message" class="marge label">Message</label>
+    <textarea name="cf_message" id="message" class="marge" rows="5"></textarea>
+    <input class="btnAvis marge" type="submit" value="Envoyer">
+    <input class="btnAvis marge" type="reset" value="Clear">
+</fieldset>
+</form>
+</div>
+    <footer>
+        <div class="footer">
+            <a href="https://www.facebook.com/profile.php?id=100049739053079"><img class="reseau" src="/facebook-svgrepo-com.svg" alt="iconFaceBook"></a>
+        </div>
+    </footer>
+<script src="/script.js"></script>    
+</body>
+</html>
