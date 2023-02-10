@@ -37,6 +37,8 @@ function recupAvis() {
   affichageAvis.append(paraAvis);
   prenomAvis.value = "";
   avisAvis.value = "";
+  paraAvis.style.marginLeft = "10px";
 
 }
 //----------------------- carousel -----------------------------//
+
