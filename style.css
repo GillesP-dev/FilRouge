@@ -386,8 +386,8 @@ section h2 {
 fieldset {
     display: flex;
     flex-direction: column;
-    height: 40rem;
-    width: 40rem;
+    height: 50vh;
+    width: 40vw;
     border-radius: 20px;
     background-color: #ceeff4;
 }
@@ -411,7 +411,7 @@ legend {
     margin-top: 5.5rem;
 }
 .btnForm {
-    width: 80%;
+    width: 35vw;
     margin-top: 0.8rem;
 }
 .btnForm:hover {
