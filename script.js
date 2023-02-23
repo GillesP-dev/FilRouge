@@ -31,10 +31,11 @@ function recupAvis() {
   champAvis = avisAvis.value;
   const titreAvis = document.createElement("h4")
   titreAvis.textContent = champPrenomAvis;
-  affichageAvis.append(titreAvis);
+  
   const paraAvis = document.createElement("p");
   paraAvis.textContent = champAvis;
-  affichageAvis.append(paraAvis);
+  affichageAvis.insertBefore(paraAvis,affichageAvis.firstChild);
+  affichageAvis.insertBefore(titreAvis,affichageAvis.firstChild);
   prenomAvis.value = "";
   avisAvis.value = "";
   paraAvis.style.marginLeft = "10px";
