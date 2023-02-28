@@ -8,8 +8,8 @@ $subject = 'message des visiteurs du site internet'.$field_name;
 $body_message = 'de:'.$field_name.' '.$field_prenom."\n";
 $body_message .= 'e-mail:'.$field_email."\n";
 $body_message .= 'Message:'.$field_message;
-$headers = "de:".$cf_email."\r\n";
-$headers .= "reply-to:".$cf_email."\r\n";
+$headers = "de:".$field_email."\r\n";
+$headers .= "reply-to:".$field_email."\r\n";
 $mail_status = mail($mail_to,$subject,$body_message,$headers);
 if($mail_status){?>
     <script language = "javascript" type = "text/javascript">

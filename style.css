@@ -69,6 +69,42 @@ body {
     width: 30px;
     background-color: #650900;
 }
+.fenetreBurger {
+    height: 100%;
+    width: 115px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -115px;
+    background-color: #ceeff4;
+    border: 2px solid #650900;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+  }
+.fenetreBurger ul {
+    list-style-type: none;
+} 
+.fenetreBurger li {
+    margin: 0 0 8px 0;
+} 
+.fenetreBurger a {
+    padding: 8px 8px 8px 30px;
+    color: #f59fbd;
+    
+}
+.fenetreBurger a:hover {   
+    color: #650900;    
+}
+.fenetreBurger .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #650900;
+    background-color: #f59fbd;
+    border: 1px solid #650900;
+    font-size: 20px;
+    text-decoration: none;
+  }
 
 /*----------------------menu navigation -------------------------*/
 .menu{
@@ -133,6 +169,27 @@ nav .item_menu {
 color: #650900; 
 }
 /*---------------------- section tableau----------------------------*/
+.pleinEcran {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 10;
+    background-color: #ceeff4;
+}
+.btnCloseTableau {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #650900;
+    background-color: #f59fbd;
+    border: 1px solid #650900;
+    font-size: 36px;}
+
 section .titreSection {
     
     margin-top: 280px;
@@ -292,7 +349,7 @@ section h2 {
         display: flex;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 500px) {
     .menu {
         display: none;
     }
@@ -301,15 +358,21 @@ section h2 {
     }
    
     .logo {
+
         width: 100vw;
-        height: 200px;
+        height: 7rem;
+    }
+    .logo img{
+        height: 5rem;   
     }
     .containerHeader {
-        height: 290px;
+        position: relative;
+        height: 10rem;
     }
     section .titreSection {
-        margin-top: 305px;
-    }
+        margin-top: 4rem;
+      }
+    
     #dernierePeinture {
         margin-left: auto;
         margin-right: auto;
@@ -328,8 +391,23 @@ section h2 {
         margin: 0 10px;
         width: 95%;
     } 
+    #grandImage .imageScrene {
+        height: 60vh;
+        margin-top: 0;
+    }
+    .affichageAvis {
+        max-width: 80vw;
+        max-height: 22vh;
+    }
+    .imageScrene {
+        height: 50vh;
+    }
+
 }
 /*------------------------------ galerie carousel --------------------*/
+.splide {
+    margin-top: 1rem;
+}
 .splide__slide img {
     width:  100%;
     height: 100%;
@@ -372,6 +450,8 @@ section h2 {
 /* ---------------------- formulaire ----------------------------------------------*/
 
 .formulaire {
+    position: relative;
+    top:8rem;
     justify-content: center;
     height: 92vh;
     display: flex;
@@ -386,7 +466,7 @@ section h2 {
 fieldset {
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 64vh;
     width: 40vw;
     border-radius: 20px;
     background-color: #ceeff4;
