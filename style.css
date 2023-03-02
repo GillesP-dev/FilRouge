@@ -183,24 +183,29 @@ color: #650900;
 }
 .btnCloseTableau {
     position: absolute;
-    top: 0;
-    right: 0;
+    height: 3rem;
+    width: 3rem;
+    top: 2px;
+    right: 2px;
     color: #650900;
     background-color: #f59fbd;
     border: 1px solid #650900;
-    font-size: 36px;}
+    border-radius: 50%;
+    font-size: 36px;
+    padding-bottom: 4px;
+}
 
 section .titreSection {
     
     margin-top: 280px;
-    
+    margin-left: 2rem;
 }
 
 section h2 {
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(1rem,4vw,3rem);
     color: #650900;
-    margin-left: 5%;
+    
 }
 .avis {
     margin-left: 5%;
@@ -217,6 +222,14 @@ section h2 {
     
     max-height: 45vh;
     max-width: 20vw ;
+}
+.divAvis {
+    background-color: #ceeff4;
+    margin-bottom: 1rem;
+    border: 1px solid #650900;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 #dernierePeinture {
     height: auto;
@@ -251,12 +264,14 @@ section h2 {
 .sectionAvis {
     display: flex;
     justify-content: center;
-    margin: 2% 0 2% 0;
+    padding: 2% 0 2% 0;
     border-bottom: 3px solid #650900;
     padding-bottom: 2%;
+    background-image: url(./Peinture/Digue\ de\ rochers\ 19-01-2021.jpg);
+    background-size: cover;
 }
 .donnerAvis {
-    width: 46vw;
+    width: 35vw;
     border: 2px solid #650900;
     border-radius: 8px;
     padding: 0 50px 0 50px;
@@ -319,6 +334,10 @@ section h2 {
 .paraPortrait {
     text-align: justify;
     margin-top: 3rem;
+}
+
+.titreportrait {
+    margin-top: 2rem;
 }
 
 /*----------------------------------- footer -----------------------------------------*/

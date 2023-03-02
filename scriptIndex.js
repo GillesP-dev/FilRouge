@@ -39,13 +39,16 @@ dernierePeinture.addEventListener("click", ()=> {
  function recupAvis() {
    champPrenomAvis = prenomAvis.value;
    champAvis = avisAvis.value;
-   const titreAvis = document.createElement("h4")
+   const divAvis = document.createElement("div");
+   divAvis.classList.add("divAvis");
+   const titreAvis = document.createElement("h4");
    titreAvis.textContent = champPrenomAvis;
    
    const paraAvis = document.createElement("p");
    paraAvis.textContent = champAvis;
-   affichageAvis.insertBefore(paraAvis,affichageAvis.firstChild);
-   affichageAvis.insertBefore(titreAvis,affichageAvis.firstChild);
+   affichageAvis.insertBefore(divAvis,affichageAvis.firstChild);
+   divAvis.append(titreAvis);
+   divAvis.append(paraAvis);
    prenomAvis.value = "";
    avisAvis.value = "";
    paraAvis.style.marginLeft = "10px";
