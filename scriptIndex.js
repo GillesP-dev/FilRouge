@@ -3,6 +3,7 @@ const prenomAvis = document.querySelector("#prenom");
 let champPrenomAvis;
 const avisAvis = document.querySelector("#avis");
 let champAvis;
+
 const btnAvis = document.querySelector(".btnAvis");
 const affichageAvis = document.querySelector(".affichageAvis");
 const btnFermetuerPleinEcran = document.querySelector(".btnCloseTableau");
@@ -39,13 +40,17 @@ dernierePeinture.addEventListener("click", ()=> {
  function recupAvis() {
    champPrenomAvis = prenomAvis.value;
    champAvis = avisAvis.value;
+   let d = new Date();
+   let addZero;
+   if(d.getDate()<10){addZero = '0'}else {addZero = ''};
+   if(d.getMonth()<10){addZero = '0'}else {addZero = ''};
    const divAvis = document.createElement("div");
    divAvis.classList.add("divAvis");
    const titreAvis = document.createElement("h4");
    titreAvis.textContent = champPrenomAvis;
    
    const paraAvis = document.createElement("p");
-   paraAvis.textContent = champAvis;
+   paraAvis.textContent = champAvis +' ('+addZero+d.getDate()+'/'+addZero+(d.getMonth()+1)+')';
    affichageAvis.insertBefore(divAvis,affichageAvis.firstChild);
    divAvis.append(titreAvis);
    divAvis.append(paraAvis);

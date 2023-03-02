@@ -113,15 +113,15 @@ body {
     height: 80px;
     width: 500px;
     background: white;
-    
+    top: -2rem;
     line-height: 80px;
    
 }
 .menu ul {
-    position: relative;
+   
     display: flex;
     list-style: none;
-    top: -11px;
+    
 }
 .menu ul li {
     height: 100%;
@@ -166,7 +166,10 @@ nav .item_menu {
     background: #650900;
 }
 #enCours {
-color: #650900; 
+    color: #650900; 
+}
+#btnenCours {
+    color: #650900; 
 }
 /*---------------------- section tableau----------------------------*/
 .pleinEcran {
