@@ -1,14 +1,12 @@
 const dernierePeinture = document.querySelector("#dernierePeinture1");
 const prenomAvis = document.querySelector("#prenom");
-let champPrenomAvis;
 const avisAvis = document.querySelector("#avis");
-let champAvis;
-
 const btnAvis = document.querySelector(".btnAvis");
 const affichageAvis = document.querySelector(".affichageAvis");
 const btnFermetuerPleinEcran = document.querySelector(".btnCloseTableau");
 const tableauPleinEcran = document.querySelector(".pleinEcran");
-console.log(dernierePeinture);
+let champAvis;
+let champPrenomAvis;
 
 
 //---------------------full sceen peinture---------------------------------//
@@ -32,7 +30,8 @@ dernierePeinture.addEventListener("click", ()=> {
  //---------------------Affichage des avis-----------------------------------//
  btnAvis.addEventListener("click", (event) => {
    event.preventDefault();
-   recupAvis();
+   if(prenomAvis.value === ""||avisAvis.value === ""){alert("remplir tout les champs S.V.P")}else{
+   recupAvis();}
    
    
  })

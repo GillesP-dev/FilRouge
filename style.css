@@ -70,22 +70,23 @@ body {
     background-color: #650900;
 }
 .fenetreBurger {
-    height: 100%;
+    height: 8rem;
     width: 115px;
     position: fixed;
     z-index: 1;
     top: 0;
-    right: -115px;
+    right: -150px;
     background-color: #ceeff4;
     border: 2px solid #650900;
     padding-top: 60px;
     transition: left 0.5s ease;
+    border-radius: 50%;
   }
 .fenetreBurger ul {
     list-style-type: none;
 } 
 .fenetreBurger li {
-    margin: 0 0 8px 0;
+    margin: 0 0 15px 0;
 } 
 .fenetreBurger a {
     padding: 8px 8px 8px 30px;
@@ -424,6 +425,11 @@ section h2 {
     .imageScrene {
         height: 50vh;
     }
+    
+    body .formulaire {
+        top: 1rem;
+        height: 40rem;
+    }
 
 }
 /*------------------------------ galerie carousel --------------------*/
@@ -488,7 +494,7 @@ section h2 {
 fieldset {
     display: flex;
     flex-direction: column;
-    height: 64vh;
+    height: 36rem;
     width: 40vw;
     border-radius: 20px;
     background-color: #ceeff4;
