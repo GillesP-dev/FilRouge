@@ -10,12 +10,24 @@ $body_message .= 'e-mail:'.$field_email."\n";
 $body_message .= 'Message:'.$field_message;
 $headers = "de:".$field_email."\r\n";
 $headers .= "reply-to:".$field_email."\r\n";
-$mail_status = mail($mail_to,$subject,$body_message,$headers);
+//$mail_status = mail($mail_to, $subject, $body_message, $headers);
+
+$to      = 'lotogilles2@gmail.com';
+$subject = 'le sujet';
+$message = 'Bonjour !';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+'Reply-To: webmaster@example.com' . "\r\n" .
+'X-Mailer: PHP/' . phpversion();
+
+$test = mail($to, $subject, $message, $headers);
+die($test);
+//$mail_status = mail($mail_to,$subject,$body_message,$headers);
+
 if($mail_status){?>
     <script language = "javascript" type = "text/javascript">
         //message envoyer
-        alert('Merci pour votre message. Je vous recontacte dès que possible.');
-        window.location = 'contact.html';
+        alert('Merci pour votre message. Je vous recontacte des que possible.');
+        window.location.href = 'contact.html';
         </script>
         >?php
 } else {?>
