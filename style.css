@@ -322,6 +322,10 @@ section h2 {
 .btnAvis:active {
     transform: translateY(2px);
 }
+.btnAvis:hover {
+    background-color: #ceeff4;
+    color: #650900;
+}
 
 /*------------------------------------ section portrait -----------------------------*/
 .containerPortrait {
