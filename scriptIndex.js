@@ -40,16 +40,17 @@ dernierePeinture.addEventListener("click", ()=> {
    champPrenomAvis = prenomAvis.value;
    champAvis = avisAvis.value;
    let d = new Date();
+   let addZeroD;
    let addZero;
-   if(d.getDate()<10){addZero = '0'}else {addZero = ''};
-   if(d.getMonth()<10){addZero = '0'}else {addZero = ''};
+   if(d.getDate()<10){addZeroD = '0'}else{addZeroD = ''};
+   if(d.getMonth()<10){addZero = '0'}else{addZero = ''};
    const divAvis = document.createElement("div");
    divAvis.classList.add("divAvis");
    const titreAvis = document.createElement("h4");
    titreAvis.textContent = champPrenomAvis;
    
    const paraAvis = document.createElement("p");
-   paraAvis.textContent = champAvis +' ('+addZero+d.getDate()+'/'+addZero+(d.getMonth()+1)+')';
+   paraAvis.textContent = champAvis +' ('+addZeroD+d.getDate()+'/'+addZero+(d.getMonth()+1)+')';
    affichageAvis.insertBefore(divAvis,affichageAvis.firstChild);
    divAvis.append(titreAvis);
    divAvis.append(paraAvis);
