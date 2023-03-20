@@ -1,0 +1,35 @@
+
+CREATE DATABASE `L'artiste`;
+
+USE `L'artiste`;
+
+create table utilisateurs(
+id_utilisateur INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+pseudo_utilisateur VARCHAR(50) NOT NULL,
+mdp_utilisateur VARCHAR(60) NOT NULL)Engine=innoDB;
+
+create table Avis(
+id_avis INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+nom_avis VARCHAR(50) not null,
+text_avis VARCHAR(100) not null,
+id_utilisateur INT NOT NULL)Engine=innoDB;
+
+create table Tableaux(
+id_tableau INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+titre_tableau VARCHAR(100)NOT NULL,
+lien_tableau VARCHAR(100)NOT NULL,
+affichage_tableau tinyint(1) default 0,
+id_utilisateur INT NOT NULL)Engine=innoDB;
+
+alter table Avis
+add constraint fk_Avis_utilisateurs
+foreign key (id_utilisateur)
+references utilisateurs(id_utilisateur);
+
+alter table Tableaux
+add constraint fk_Tableaux_utilisateurs
+foreign key (id_utilisateur)
+references utilisateurs(id_utilisateur);
+
+INSERT INTO utilisateurs (id_utilisateur, pseudo_utilisateur, mdp_utilisateur) 
+VALUES (NULL, lartiste, lartisteSP); 
