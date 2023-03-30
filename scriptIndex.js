@@ -12,10 +12,10 @@ let champPrenomAvis;
 //---------------------full sceen peinture---------------------------------//
 dernierePeinture.addEventListener("click", ()=> {
   // openFullscreen()
- tableauPleinEcran.style.display = "flex"      
+ tableauPleinEcran.style.display = "flex" ;     
  });
  btnFermetuerPleinEcran.addEventListener("click", ()=> {
-  tableauPleinEcran.style.display = "none" 
+  tableauPleinEcran.style.display = "none" ;
  })
 //  function openFullscreen() {
 //    if (dernierePeinture.requestFullscreen) {
@@ -59,3 +59,11 @@ dernierePeinture.addEventListener("click", ()=> {
    paraAvis.style.marginLeft = "10px";
  
  }
+ //------------------------------------redirection logo/connexion-----------------------------//
+ const logo = document.querySelector(".logo");
+
+ logo.addEventListener("click", (event) => {
+  
+  window.location.href='./connexion.php'
+  
+})

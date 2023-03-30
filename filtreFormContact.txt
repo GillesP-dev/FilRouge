@@ -1,0 +1,62 @@
+<?php
+// Vérifier si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // Définir les variables et initialiser avec des valeurs vides
+  $nom = $prenom = $email = $message = "";
+
+  // Nettoyer les données de formulaire pour éviter l'injection de code malveillant
+  function nettoyer_donnees($donnees) {
+    $donnees = trim($donnees);
+    $donnees = stripslashes($donnees);
+    $donnees = htmlspecialchars($donnees);
+    return $donnees;
+  }
+
+  // Vérifier et nettoyer le champ "nom"
+  if (empty($_POST["nom"])) {
+    $nom_err = "Le nom est requis";
+  } else {
+    $nom = nettoyer_donnees($_POST["nom"]);
+    // Vérifier si le nom ne contient que des lettres et des espaces
+    if (!preg_match("/^[a-zA-Z ]*$/",$nom)) {
+      $nom_err = "Seuls les lettres et les espaces sont autorisés";
+    }
+  }
+
+  // Vérifier et nettoyer le champ "prénom"
+  if (empty($_POST["prenom"])) {
+    $prenom_err = "Le prénom est requis";
+  } else {
+    $prenom = nettoyer_donnees($_POST["prenom"]);
+    // Vérifier si le prénom ne contient que des lettres et des espaces
+    if (!preg_match("/^[a-zA-Z ]*$/",$prenom)) {
+      $prenom_err = "Seuls les lettres et les espaces sont autorisés";
+    }
+  }
+
+  // Vérifier et nettoyer le champ "email"
+  if (empty($_POST["email"])) {
+    $email_err = "L'email est requis";
+  } else {
+    $email = nettoyer_donnees($_POST["email"]);
+    // Vérifier si l'email est valide
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $email_err = "L'email n'est pas valide";
+    }
+  }
+
+  // Vérifier et nettoyer le champ "message"
+  if (empty($_POST["message"])) {
+    $message_err = "Le message est requis";
+  } else {
+    $message = nettoyer_donnees($_POST["message"]);
+  }
+
+  // Si toutes les données sont valides, envoyer le formulaire
+  if (empty($nom_err) && empty($prenom_err) && empty($email_err) && empty($message_err)) {
+    // Envoyer le formulaire ici
+    // ...
+  }
+}
+?>
