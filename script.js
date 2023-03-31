@@ -14,7 +14,7 @@ btnClose.addEventListener("click", (event) => {
   fenetreBurger.style.right = "-150px"; 
 })
 
-//----------------------- carousel -----------------------------//
+
 
 
 
