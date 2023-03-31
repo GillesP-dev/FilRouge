@@ -13,6 +13,8 @@ $req->bindParam(':id_utilisateur', $_SESSION['user']['id_utilisateur']);
 $req->execute();
 }
 $bdd->query("SELECT * FROM Tableaux ");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -46,22 +48,23 @@ $bdd->query("SELECT * FROM Tableaux ");
                 })
                 .then((response) => response.json())
                 .then((result) => {
+                    
                     Object.keys(result).forEach(key =>{
-                   
-                        
                         let titre = document.createElement('p');
                         document.body.append(titre);
-                        titre.textContent = result[key]['titre_tableau'];})
-                        
-
-
+                        titre.textContent = result[key]['titre_tableau'];
+                        let btnAffichage = document.createElement('button');
+                        document.body.append(btnAffichage);
+                        btnAffichage.textContent = "Afficher";
+                        btnAffichage.setAttribute("id",result[key]['id_tableau']);
+                        let btnDelete = document.createElement('button');
+                        document.body.append(btnDelete);
+                        btnDelete.setAttribute("id",result[key]['id_tableau']);
+                        btnDelete.textContent = "Supprimer";
                     })
+                           })
+                    }
                     
-                
-
-    }
-
-
 </script>
 </html>
 
