@@ -14,7 +14,6 @@ $req->execute();
 }
 $bdd->query("SELECT * FROM Tableaux ");
 
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,6 +36,7 @@ $bdd->query("SELECT * FROM Tableaux ");
  </form>
     <label for="btn_list">afficher la liste des  tableaux</label>
     <button id="btn_list" type="button" onclick="affichageTableaux()" value="rechercher">Rechercher</button>
+    <button type="button" onclick="window.location.href = './index.html';">Fermer</button>
 </body>
 <script>
     let btn_list = document.querySelector("#btn_list");
@@ -50,21 +50,29 @@ $bdd->query("SELECT * FROM Tableaux ");
                 .then((result) => {
                     
                     Object.keys(result).forEach(key =>{
+                        let form = document.createElement('form');
+                        document.body.append(form);
+                        form.setAttribute('action','testsup.php');
+                        form.setAttribute('method','post');
                         let titre = document.createElement('p');
                         document.body.append(titre);
                         titre.textContent = result[key]['titre_tableau'];
                         let btnAffichage = document.createElement('button');
-                        document.body.append(btnAffichage);
+                        form.append(btnAffichage);
                         btnAffichage.textContent = "Afficher";
                         btnAffichage.setAttribute("id",result[key]['id_tableau']);
                         let btnDelete = document.createElement('button');
-                        document.body.append(btnDelete);
+                        form.append(btnDelete);
                         btnDelete.setAttribute("id",result[key]['id_tableau']);
+                        btnDelete.setAttribute('name',result[key]['id_tableau']);
+                        
                         btnDelete.textContent = "Supprimer";
+                        let btnSup = document.querySelectorAll('#sup') ; 
                     })
                            })
                     }
-                    
+       
+             
 </script>
 </html>
 
