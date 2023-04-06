@@ -50,13 +50,15 @@ $bdd->query("SELECT * FROM Tableaux ");
                 .then((result) => {
                     
                     Object.keys(result).forEach(key =>{
+                        //afficher le titre du tableau
+                        let titre = document.createElement('p');
+                        document.body.append(titre);
+                        titre.textContent = result[key]['titre_tableau'];
+                        //cree un formulaire avec les boutons affichage et supprime
                         let form = document.createElement('form');
                         document.body.append(form);
                         form.setAttribute('action','testsup.php');
                         form.setAttribute('method','post');
-                        let titre = document.createElement('p');
-                        document.body.append(titre);
-                        titre.textContent = result[key]['titre_tableau'];
                         let btnAffichage = document.createElement('button');
                         form.append(btnAffichage);
                         btnAffichage.textContent = "Afficher";
@@ -65,7 +67,6 @@ $bdd->query("SELECT * FROM Tableaux ");
                         form.append(btnDelete);
                         btnDelete.setAttribute("id",result[key]['id_tableau']);
                         btnDelete.setAttribute('name',result[key]['id_tableau']);
-                        
                         btnDelete.textContent = "Supprimer";
                         let btnSup = document.querySelectorAll('#sup') ; 
                     })
