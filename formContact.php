@@ -26,14 +26,14 @@
             <div class="fenetreBurger">
                 <button id="closeBtn" class="close">×</button>
                 <ul>
-                    <li><a href="index.html"   class="item_menu accueil">Accueil</a></li>
+                    <li><a href="index.php"   class="item_menu accueil">Accueil</a></li>
                     <li><a href="galerie.php" class="item_menu galeries">Galeries</a></li>
                     <li><a href="formContact.php" id="btnenCours" class="item_menu contact">contact</a></li>
                 </ul>  
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="index.html" class="item_menu accueil">Accueil</a></li>
+                    <li><a href="index.php" class="item_menu accueil">Accueil</a></li>
                     <li><a href="galerie.php" class="item_menu galeries">Galeries</a></li>
                     <li><a href="formContact.php" id="enCours" class="item_menu contact">contact</a></li>
                     <div class="slider slider1"></div>
