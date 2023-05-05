@@ -39,5 +39,5 @@ if (isset($_POST['name_user']) && isset($_POST['form_password'])) {
         <input type="password" name="form_password" id="form_password" placeholder="1234">
         <input type="submit" value="Se connecter">
     </form>
-    <button type="button" onclick="window.location.href = './index.html';">Fermer</button>
+    <button type="button" onclick="window.location.href = './index.php';">Fermer</button>
 </body>

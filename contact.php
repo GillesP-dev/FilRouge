@@ -20,8 +20,8 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
 // Informations envoyeur/réceptionneur
-$mail->Username = 'gllspierrot@gmail.com';
-$mail->Password = 'rredfxrwsurnbpeo';
+$mail->Username = 'pierrotgilles8@gmail.com';
+$mail->Password = 'xonihhauduvxufsf';
 $mail->From = 'serveur@debian.fr';
 $mail->FromName = 'test';
 $mail->addAddress('lotogilles2@gmail.com');

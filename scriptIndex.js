@@ -28,13 +28,13 @@ dernierePeinture.addEventListener("click", ()=> {
 //  } 
  
  //---------------------Affichage des avis-----------------------------------//
- btnAvis.addEventListener("click", (event) => {
-   event.preventDefault();
-   if(prenomAvis.value === ""||avisAvis.value === ""){alert("remplir tout les champs S.V.P")}else{
-   recupAvis();}
+//  btnAvis.addEventListener("click", (event) => {
+//   //  event.preventDefault();
+//    if(prenomAvis.value === ""||avisAvis.value === ""){alert("remplir tout les champs S.V.P")}else{
+//    recupAvis();}
    
    
- })
+//  })
  
  function recupAvis() {
    champPrenomAvis = prenomAvis.value;

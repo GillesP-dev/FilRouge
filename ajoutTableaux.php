@@ -4,16 +4,17 @@ if (isset($_POST['titre_tableau']) && isset($_FILES['file']))  {
     $titre_tableau = $_POST['titre_tableau'];
     $tmpName = $_FILES['file']['tmp_name'];
     $name = $_FILES['file']['name'];
+    $affiche = 0 ;
     move_uploaded_file($tmpName, "Peinture/$name");
 
-    $req = $bdd->prepare("INSERT INTO Tableaux(titre_tableau,lien_tableau,id_utilisateur) Values(:titre_tableau,:lien_tableau,:id_utilisateur)");
+    $req = $bdd->prepare("INSERT INTO Tableaux(titre_tableau,lien_tableau,affiche_tableau,id_utilisateur) Values(:titre_tableau,:lien_tableau,:affiche_tableau,:id_utilisateur)");
 $req->bindParam(':titre_tableau', $titre_tableau);
 $req->bindParam(':lien_tableau', $name);
+$req->bindParam(':affiche_tableau',$affiche);
 $req->bindParam(':id_utilisateur', $_SESSION['user']['id_utilisateur']);
 $req->execute();
 }
 $bdd->query("SELECT * FROM Tableaux ");
-
 
 ?>
 <!DOCTYPE html>
@@ -37,6 +38,7 @@ $bdd->query("SELECT * FROM Tableaux ");
  </form>
     <label for="btn_list">afficher la liste des  tableaux</label>
     <button id="btn_list" type="button" onclick="affichageTableaux()" value="rechercher">Rechercher</button>
+    <button type="button" onclick="window.location.href = './index.php';">Fermer</button>
 </body>
 <script>
     let btn_list = document.querySelector("#btn_list");
@@ -50,21 +52,35 @@ $bdd->query("SELECT * FROM Tableaux ");
                 .then((result) => {
                     
                     Object.keys(result).forEach(key =>{
+                        //afficher le titre du tableau
                         let titre = document.createElement('p');
                         document.body.append(titre);
                         titre.textContent = result[key]['titre_tableau'];
+                        //cree un formulaire avec les boutons affichage et supprime
+                        let form1 = document.createElement('form');
+                        document.body.append(form1);
+                        form1.setAttribute('action','testsup.php');
+                        form1.setAttribute('method','post');
+                        let form2 = document.createElement('form');
+                        document.body.append(form2);
+                        form2.setAttribute('action','afficherTableau.php');
+                        form2.setAttribute('method','post');
                         let btnAffichage = document.createElement('button');
-                        document.body.append(btnAffichage);
-                        btnAffichage.textContent = "Afficher";
+                        form2.append(btnAffichage);
+                        btnAffichage.textContent = "Afficher sur la page d'accueil";
                         btnAffichage.setAttribute("id",result[key]['id_tableau']);
+                        btnAffichage.setAttribute('name',result[key]['id_tableau']);
                         let btnDelete = document.createElement('button');
-                        document.body.append(btnDelete);
+                        form1.append(btnDelete);
                         btnDelete.setAttribute("id",result[key]['id_tableau']);
+                        btnDelete.setAttribute('name',result[key]['id_tableau']);
                         btnDelete.textContent = "Supprimer";
+                        let btnSup = document.querySelectorAll('#sup') ; 
                     })
                            })
                     }
-                    
+       
+             
 </script>
 </html>
 
